@@ -21,7 +21,7 @@
 }
 
 .hero-cinematic-bg {
-  background-image: url('../assets/images/hero-woman-dining.png');
+  background-image: url('https://dollyziba-web.github.io/porta/assets/images/hero-woman-dining.png'), url('assets/images/hero-woman-dining.png'), url('../assets/images/hero-woman-dining.png');
   background-size: cover;
   background-position: right 18% center;
   background-repeat: no-repeat;

@@ -22,6 +22,2709 @@
   <link rel="stylesheet" href="css/components.css?v=2.0">
   <link rel="stylesheet" href="css/animations.css?v=2.0">
   <link rel="stylesheet" href="css/pages.css?v=2.0">
+  <base id="zee-base" href="https://dollyziba-web.github.io/porta/">
+  <script id="zee-base-script">
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      var b = document.getElementById('zee-base');
+      if (b) b.setAttribute('href', '/');
+    }
+  </script>
+  <style id="zee-inline-styles">
+/* ==========================================================================
+   ZEE EATERY — LUXURY DESIGN SYSTEM TOKENS
+   Italian & International Fine Dining • Italy
+   ========================================================================== */
+
+:root {
+  /* Brand Core Color Palette */
+  --color-espresso: #100A07;
+  --color-rich-brown: #24130C;
+  --color-chocolate: #3A2115;
+  --color-mocha-deep: #1A0F09;
+  --color-warm-ebony: #150D09;
+  --color-slate-dark: #1E120B;
+
+  /* Gold Accents & Highlights */
+  --color-antique-gold: #C49A45;
+  --color-champagne-gold: #D6B878;
+  --color-pale-gold: #E8D3A7;
+  --color-deep-gold: #9E7A31;
+  --color-gold-glow: rgba(196, 154, 69, 0.35);
+  --color-gold-border: rgba(196, 154, 69, 0.28);
+  --color-gold-border-light: rgba(214, 184, 120, 0.18);
+  --color-gold-border-bright: rgba(214, 184, 120, 0.65);
+
+  /* Light & Text Colors */
+  --color-warm-ivory: #F3EBDD;
+  --color-cream: #FAF6F0;
+  --color-muted-sand: #D9CEBE;
+  --color-soft-gray: #A89B8C;
+  --color-text-dark: #100A07;
+  --color-text-body: #E8DFD0;
+  --color-text-muted: #B8AA98;
+
+  /* Background Variations for Sections */
+  --bg-espresso: #100A07;
+  --bg-rich-brown: #24130C;
+  --bg-chocolate: #3A2115;
+  --bg-warm-ivory: #F3EBDD;
+  --bg-card-dark: rgba(36, 19, 12, 0.7);
+  --bg-card-hover: rgba(58, 33, 21, 0.85);
+  --bg-glass-espresso: rgba(16, 10, 7, 0.85);
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Garamond, 'Playfair Display', Georgia, serif;
+  --font-sans: 'Montserrat', 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Transitions */
+  --transition-fast: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-medium: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-luxury: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2.5rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+  --spacing-4xl: 8rem;
+
+  /* Layout */
+  --container-max: 1320px;
+  --container-narrow: 1080px;
+  --navbar-height: 90px;
+  --navbar-height-scrolled: 76px;
+
+  /* Shadows */
+  --shadow-subtle: 0 8px 30px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 15px 40px rgba(0, 0, 0, 0.45);
+  --shadow-gold-glow: 0 0 25px rgba(196, 154, 69, 0.25);
+  --shadow-gold-button: 0 4px 20px rgba(196, 154, 69, 0.35);
+  --shadow-lightbox: 0 25px 60px rgba(0, 0, 0, 0.85);
+
+  /* Radius */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-pill: 9999px;
+
+  /* Z-Indices */
+  --z-below: -1;
+  --z-base: 1;
+  --z-nav: 100;
+  --z-mobile-menu: 110;
+  --z-floating: 120;
+  --z-modal: 150;
+  --z-toast: 200;
+}
+
+/* ==========================================================================
+   ZEE EATERY — BASE STYLES & LUXURY TYPOGRAPHY
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-espresso);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text-body);
+  background-color: var(--color-espresso);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-espresso);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-antique-gold) 0%, var(--color-chocolate) 100%);
+  border-radius: 4px;
+  border: 2px solid var(--color-espresso);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-champagne-gold);
+}
+
+/* Text Selection */
+::selection {
+  background-color: var(--color-antique-gold);
+  color: var(--color-espresso);
+}
+::-moz-selection {
+  background-color: var(--color-antique-gold);
+  color: var(--color-espresso);
+}
+
+/* Base Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-warm-ivory);
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+h2 {
+  font-size: clamp(2rem, 3.8vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+h3 {
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+h4 {
+  font-size: clamp(1.15rem, 1.5vw, 1.45rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  font-size: 1.025rem;
+  color: var(--color-text-body);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Layout Containers */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+}
+
+.container-wide {
+  max-width: 1480px;
+}
+
+/* Section Containers & Backgrounds */
+.section {
+  position: relative;
+  padding-top: clamp(4.5rem, 8vw, 7.5rem);
+  padding-bottom: clamp(4.5rem, 8vw, 7.5rem);
+  overflow: hidden;
+}
+
+.section-dense {
+  padding-top: clamp(3rem, 5vw, 5rem);
+  padding-bottom: clamp(3rem, 5vw, 5rem);
+}
+
+/* Intentional Background Variations as requested by prompt */
+.bg-espresso {
+  background-color: var(--color-espresso);
+  color: var(--color-text-body);
+}
+
+.bg-rich-brown {
+  background-color: var(--color-rich-brown);
+  color: var(--color-text-body);
+}
+
+.bg-chocolate {
+  background-color: var(--color-chocolate);
+  color: var(--color-text-body);
+}
+
+.bg-warm-ivory {
+  background-color: var(--color-warm-ivory);
+  color: var(--color-espresso);
+}
+
+.bg-warm-ivory h1,
+.bg-warm-ivory h2,
+.bg-warm-ivory h3,
+.bg-warm-ivory h4 {
+  color: var(--color-espresso);
+}
+
+.bg-warm-ivory p {
+  color: #38251C;
+}
+
+.bg-warm-ivory .gold-eyebrow {
+  color: #8C6A28;
+}
+
+.bg-warm-ivory .gold-divider::before,
+.bg-warm-ivory .gold-divider::after {
+  background: linear-gradient(90deg, transparent, rgba(140, 106, 40, 0.4), transparent);
+}
+
+/* Decorative Gold Eyebrows */
+.gold-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--color-champagne-gold);
+  margin-bottom: 1.25rem;
+}
+
+.gold-eyebrow::before,
+.gold-eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--color-antique-gold);
+  opacity: 0.75;
+}
+
+.gold-eyebrow.no-after::after {
+  display: none;
+}
+
+/* Subtle Gold Divider */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  flex: 1;
+  max-width: 140px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-border), transparent);
+}
+
+.gold-divider-diamond {
+  color: var(--color-antique-gold);
+  font-size: 0.7rem;
+  transform: rotate(45deg);
+  display: inline-block;
+}
+
+/* Header Text Alignments */
+.text-center {
+  text-align: center;
+}
+
+.text-center .gold-eyebrow {
+  justify-content: center;
+}
+
+.section-header {
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.section-header p.subtitle {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  margin: 1rem auto 0;
+  line-height: 1.8;
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-champagne-gold);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   ZEE EATERY — LUXURY COMPONENTS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. NAVIGATION BAR
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  z-index: var(--z-nav);
+  transition: all var(--transition-medium);
+  background: linear-gradient(180deg, rgba(16, 10, 7, 0.75) 0%, rgba(16, 10, 7, 0) 100%);
+  display: flex;
+  align-items: center;
+}
+
+.site-header.scrolled {
+  height: var(--navbar-height-scrolled);
+  background: rgba(16, 10, 7, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-gold-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Brand Logo */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+
+.logo-symbol {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-antique-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-champagne-gold);
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  background: radial-gradient(circle, rgba(196, 154, 69, 0.15) 0%, transparent 70%);
+  box-shadow: 0 0 15px rgba(196, 154, 69, 0.2);
+  transition: all var(--transition-fast);
+}
+
+.brand-logo:hover .logo-symbol {
+  transform: scale(1.05);
+  border-color: var(--color-champagne-gold);
+  box-shadow: 0 0 20px rgba(214, 184, 120, 0.4);
+}
+
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--color-warm-ivory);
+  line-height: 1;
+}
+
+.logo-sub {
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  letter-spacing: 0.35em;
+  color: var(--color-champagne-gold);
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+/* Nav Links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-muted-sand);
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-champagne-gold);
+  transition: all var(--transition-fast);
+  transform: translateX(-50%);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-champagne-gold);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Nav Action */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Hamburger Toggle Button */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 22px;
+  background: transparent;
+  cursor: pointer;
+  z-index: var(--z-mobile-menu);
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-warm-ivory);
+  transition: all var(--transition-fast);
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+  background-color: var(--color-champagne-gold);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+  background-color: var(--color-champagne-gold);
+}
+
+/* Mobile Drawer */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(16, 10, 7, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: var(--z-mobile-menu);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-medium);
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--color-warm-ivory);
+  letter-spacing: 0.05em;
+  transition: color var(--transition-fast);
+}
+
+.mobile-nav-link.active,
+.mobile-nav-link:hover {
+  color: var(--color-champagne-gold);
+}
+
+.mobile-menu-info {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.mobile-menu-info a {
+  color: var(--color-champagne-gold);
+  display: block;
+  margin-top: 0.4rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. LUXURY BUTTONS
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--color-antique-gold) 0%, #B2883B 100%);
+  color: var(--color-espresso);
+  border: 1px solid var(--color-champagne-gold);
+  box-shadow: var(--shadow-gold-button);
+}
+
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, var(--color-champagne-gold) 0%, var(--color-antique-gold) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(196, 154, 69, 0.5);
+  color: #0A0604;
+}
+
+.btn-gold:hover::before {
+  left: 100%;
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--color-champagne-gold);
+  border: 1px solid var(--color-gold-border-bright);
+}
+
+.btn-outline-gold:hover {
+  background: var(--color-antique-gold);
+  color: var(--color-espresso);
+  border-color: var(--color-antique-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(196, 154, 69, 0.35);
+}
+
+.btn-text-gold {
+  padding: 0.5rem 0;
+  background: transparent;
+  color: var(--color-champagne-gold);
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid transparent;
+}
+
+.btn-text-gold:hover {
+  color: var(--color-pale-gold);
+  border-bottom-color: var(--color-pale-gold);
+}
+
+.btn-text-gold svg {
+  transition: transform var(--transition-fast);
+}
+
+.btn-text-gold:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-sm {
+  padding: 0.65rem 1.35rem;
+  font-size: 0.72rem;
+}
+
+.btn-lg {
+  padding: 1.15rem 2.5rem;
+  font-size: 0.86rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. EDITORIAL IMAGE FRAMES & VISUALS
+   -------------------------------------------------------------------------- */
+.editorial-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-gold-border);
+  box-shadow: var(--shadow-card);
+}
+
+.editorial-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.editorial-frame:hover img {
+  transform: scale(1.04);
+}
+
+.editorial-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 40px rgba(16, 10, 7, 0.4);
+}
+
+/* Decorative Gold Corner accents */
+.frame-corner-gold {
+  position: relative;
+}
+
+.frame-corner-gold::before,
+.frame-corner-gold::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 2;
+  transition: all var(--transition-fast);
+}
+
+.frame-corner-gold::before {
+  top: -6px;
+  left: -6px;
+  border-top: 2px solid var(--color-antique-gold);
+  border-left: 2px solid var(--color-antique-gold);
+}
+
+.frame-corner-gold::after {
+  bottom: -6px;
+  right: -6px;
+  border-bottom: 2px solid var(--color-antique-gold);
+  border-right: 2px solid var(--color-antique-gold);
+}
+
+.frame-corner-gold:hover::before {
+  top: -9px;
+  left: -9px;
+  border-color: var(--color-champagne-gold);
+}
+
+.frame-corner-gold:hover::after {
+  bottom: -9px;
+  right: -9px;
+  border-color: var(--color-champagne-gold);
+}
+
+/* --------------------------------------------------------------------------
+   4. LUXURY CARDS
+   -------------------------------------------------------------------------- */
+.luxury-card {
+  background: var(--bg-card-dark);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: 2.25rem;
+  transition: all var(--transition-medium);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.luxury-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--color-gold-border-bright);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card), var(--shadow-gold-glow);
+}
+
+/* --------------------------------------------------------------------------
+   5. GALLERY & LIGHTBOX
+   -------------------------------------------------------------------------- */
+.gallery-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.filter-btn {
+  padding: 0.65rem 1.45rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-muted-sand);
+  background: rgba(36, 19, 12, 0.6);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  color: var(--color-warm-ivory);
+  border-color: var(--color-champagne-gold);
+  background: rgba(58, 33, 21, 0.8);
+}
+
+.filter-btn.active {
+  color: var(--color-espresso);
+  background: var(--color-champagne-gold);
+  border-color: var(--color-champagne-gold);
+  box-shadow: 0 4px 15px rgba(196, 154, 69, 0.3);
+  font-weight: 600;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.75rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-gold-border);
+  background: var(--color-rich-brown);
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+}
+
+.gallery-item.hide {
+  display: none;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 10, 7, 0.1) 0%, rgba(16, 10, 7, 0.85) 85%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.75rem;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+
+.gallery-item-tag {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-champagne-gold);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.gallery-item-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-warm-ivory);
+  line-height: 1.2;
+}
+
+.gallery-item-desc {
+  font-size: 0.85rem;
+  color: var(--color-muted-sand);
+  margin-top: 0.35rem;
+  line-height: 1.4;
+}
+
+.gallery-zoom-icon {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(16, 10, 7, 0.7);
+  border: 1px solid var(--color-champagne-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-champagne-gold);
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: all var(--transition-fast);
+}
+
+.gallery-item:hover .gallery-zoom-icon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 6, 4, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: var(--z-modal);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.lightbox-modal.open {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content-wrapper {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-img-box {
+  position: relative;
+  max-height: 70vh;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-gold-border);
+  box-shadow: var(--shadow-lightbox);
+}
+
+.lightbox-img-box img {
+  max-height: 70vh;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-caption-bar {
+  margin-top: 1.25rem;
+  text-align: center;
+  width: 100%;
+}
+
+.lightbox-category {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: var(--color-champagne-gold);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.lightbox-title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--color-warm-ivory);
+}
+
+.lightbox-desc {
+  font-size: 0.95rem;
+  color: var(--color-muted-sand);
+  max-width: 650px;
+  margin: 0.5rem auto 0;
+}
+
+.lightbox-counter {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--color-antique-gold);
+}
+
+/* Lightbox Controls */
+.lightbox-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: rgba(24, 13, 8, 0.8);
+  border: 1px solid var(--color-gold-border);
+  border-radius: 50%;
+  color: var(--color-warm-ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.lightbox-btn:hover {
+  background: var(--color-antique-gold);
+  color: var(--color-espresso);
+  border-color: var(--color-antique-gold);
+  box-shadow: 0 0 15px rgba(196, 154, 69, 0.4);
+}
+
+.lightbox-btn.prev {
+  left: 2rem;
+}
+
+.lightbox-btn.next {
+  right: 2rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(24, 13, 8, 0.8);
+  border: 1px solid var(--color-gold-border);
+  color: var(--color-warm-ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.lightbox-close:hover {
+  background: var(--color-antique-gold);
+  color: var(--color-espresso);
+  border-color: var(--color-antique-gold);
+}
+
+/* --------------------------------------------------------------------------
+   6. LUXURY FORMS & INPUTS
+   -------------------------------------------------------------------------- */
+.luxury-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-full {
+  grid-column: 1 / -1;
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-champagne-gold);
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.95rem 1.15rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--color-warm-ivory);
+  background-color: rgba(26, 15, 9, 0.7);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-champagne-gold);
+  box-shadow: 0 0 15px rgba(196, 154, 69, 0.25);
+  background-color: rgba(36, 19, 12, 0.9);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(184, 170, 152, 0.5);
+  font-size: 0.88rem;
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23D6B878' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.25rem center;
+}
+
+.form-select option {
+  background-color: var(--color-rich-brown);
+  color: var(--color-warm-ivory);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-error {
+  font-size: 0.75rem;
+  color: #E57373;
+  margin-top: 0.35rem;
+  display: none;
+}
+
+.form-group.has-error .form-input,
+.form-group.has-error .form-select,
+.form-group.has-error .form-textarea {
+  border-color: #E57373;
+}
+
+.form-group.has-error .form-error {
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   7. FLOATING WHATSAPP BUTTON (ESSENTIAL REQUIREMENT)
+   -------------------------------------------------------------------------- */
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: var(--z-floating);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.whatsapp-float-icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all var(--transition-medium);
+  position: relative;
+}
+
+.whatsapp-float-icon-box::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  animation: pulseGlow 2.5s infinite;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 0.2; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.whatsapp-float-btn:hover .whatsapp-float-icon-box {
+  transform: scale(1.08);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-tooltip {
+  background: rgba(16, 10, 7, 0.95);
+  color: var(--color-warm-ivory);
+  border: 1px solid var(--color-gold-border);
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateX(10px);
+  pointer-events: none;
+  transition: all var(--transition-fast);
+}
+
+.whatsapp-float-btn:hover .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --------------------------------------------------------------------------
+   8. TOAST NOTIFICATION
+   -------------------------------------------------------------------------- */
+.toast-container {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  pointer-events: none;
+}
+
+.toast {
+  background: rgba(24, 13, 8, 0.95);
+  border: 1px solid var(--color-champagne-gold);
+  border-radius: var(--radius-sm);
+  padding: 1.15rem 1.65rem;
+  color: var(--color-warm-ivory);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  max-width: 420px;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all var(--transition-medium);
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast-icon {
+  color: var(--color-champagne-gold);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.toast-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-champagne-gold);
+}
+
+.toast-msg {
+  font-size: 0.85rem;
+  color: var(--color-muted-sand);
+  margin-top: 0.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. LUXURY FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--color-espresso);
+  border-top: 1px solid var(--color-gold-border);
+  padding-top: clamp(4rem, 6vw, 6rem);
+  padding-bottom: 2.5rem;
+  position: relative;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 2px;
+  background: radial-gradient(circle, var(--color-champagne-gold) 0%, transparent 80%);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1.2fr 1.6fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
+}
+
+.footer-brand p {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  margin-top: 1.25rem;
+  max-width: 340px;
+  line-height: 1.7;
+}
+
+.footer-heading {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-champagne-gold);
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer-link {
+  font-size: 0.9rem;
+  color: var(--color-muted-sand);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: var(--color-champagne-gold);
+  transform: translateX(4px);
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 0.9rem;
+  color: var(--color-muted-sand);
+  margin-bottom: 0.85rem;
+}
+
+.footer-contact-item svg {
+  color: var(--color-champagne-gold);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.footer-contact-item a {
+  color: var(--color-warm-ivory);
+  transition: color var(--transition-fast);
+}
+
+.footer-contact-item a:hover {
+  color: var(--color-champagne-gold);
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(196, 154, 69, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.footer-copyright {
+  letter-spacing: 0.05em;
+}
+
+.footer-italy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-champagne-gold);
+}
+
+/* ==========================================================================
+   ZEE EATERY — LUXURY ANIMATION SYSTEM
+   Refined Letter Animations & Cinematic Scroll Reveals
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. HERO LETTER-LEVEL REVEAL & FLOATING ANIMATIONS
+   -------------------------------------------------------------------------- */
+.anim-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(28px);
+  will-change: transform, opacity;
+  animation: letterRise 0.85s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+}
+
+/* Stagger delays are calculated dynamically via JS or assigned via inline style */
+@keyframes letterRise {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+  }
+  60% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Selected letters with subtle perpetual floating/breathing */
+.anim-letter.float-subtle {
+  animation: letterRise 0.85s cubic-bezier(0.2, 0.9, 0.3, 1) forwards,
+             letterFloat 6s ease-in-out infinite alternate;
+}
+
+@keyframes letterFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3.5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Words preserve whitespace properly */
+.anim-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Staggered entrance for subtitle & hero buttons */
+.hero-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.9s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+}
+
+.hero-fade-up.delay-1 { animation-delay: 0.2s; }
+.hero-fade-up.delay-2 { animation-delay: 0.6s; }
+.hero-fade-up.delay-3 { animation-delay: 0.9s; }
+.hero-fade-up.delay-4 { animation-delay: 1.1s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. SCROLL REVEAL ANIMATIONS
+   -------------------------------------------------------------------------- */
+.js-enabled .reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.85s cubic-bezier(0.2, 0.9, 0.3, 1),
+              transform 0.85s cubic-bezier(0.2, 0.9, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.js-enabled .reveal.reveal-left {
+  transform: translateX(-40px);
+}
+
+.js-enabled .reveal.reveal-right {
+  transform: translateX(40px);
+}
+
+.js-enabled .reveal.reveal-scale {
+  transform: scale(0.94);
+}
+
+.js-enabled .reveal.is-revealed {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Stagger classes for grid children */
+.stagger-parent .stagger-child:nth-child(1) { transition-delay: 0.05s; }
+.stagger-parent .stagger-child:nth-child(2) { transition-delay: 0.15s; }
+.stagger-parent .stagger-child:nth-child(3) { transition-delay: 0.25s; }
+.stagger-parent .stagger-child:nth-child(4) { transition-delay: 0.35s; }
+.stagger-parent .stagger-child:nth-child(5) { transition-delay: 0.45s; }
+.stagger-parent .stagger-child:nth-child(6) { transition-delay: 0.55s; }
+
+/* --------------------------------------------------------------------------
+   3. SUBTLE AMBIENT & HOVER EFFECTS
+   -------------------------------------------------------------------------- */
+/* Soft Gold Pulse */
+@keyframes subtleGoldPulse {
+  0% {
+    box-shadow: 0 0 15px rgba(196, 154, 69, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(196, 154, 69, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(196, 154, 69, 0.2);
+  }
+}
+
+.gold-pulse {
+  animation: subtleGoldPulse 4s infinite ease-in-out;
+}
+
+/* Subtle Slow Ken Burns for background overlays */
+@keyframes slowKenBurns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.ken-burns {
+  animation: slowKenBurns 18s ease-out alternate infinite;
+}
+
+/* --------------------------------------------------------------------------
+   4. ACCESSIBILITY: REDUCED MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .anim-letter,
+  .hero-fade-up,
+  .reveal,
+  .reveal.reveal-left,
+  .reveal.reveal-right,
+  .reveal.reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   ZEE EATERY — PAGE-SPECIFIC LAYOUTS & RESPONSIVE RULES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE: SECTION 1 — CINEMATIC FULL-WIDTH HERO SECTION
+   Matches the reference screenshot: single cinematic composition with
+   headline, supporting text and CTA on the LEFT, and the woman dining
+   naturally integrated on the RIGHT side of the background.
+   No separate framed card.
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--navbar-height) + 3rem);
+  padding-bottom: clamp(4rem, 8vw, 6.5rem);
+  background-color: var(--color-espresso);
+  overflow: hidden;
+}
+
+.hero-cinematic-bg {
+  background-image: url('https://dollyziba-web.github.io/porta/assets/images/hero-woman-dining.png'), url('assets/images/hero-woman-dining.png'), url('../assets/images/hero-woman-dining.png');
+  background-size: cover;
+  background-position: right 18% center;
+  background-repeat: no-repeat;
+}
+
+/* Dark gradient overlay: guarantees perfect readability for left-aligned text
+   while allowing the woman dining on the right to remain luminous and natural */
+.hero-cinematic-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: 
+    linear-gradient(to right, 
+      rgba(16, 10, 7, 0.96) 0%, 
+      rgba(16, 10, 7, 0.90) 32%, 
+      rgba(16, 10, 7, 0.65) 50%, 
+      rgba(16, 10, 7, 0.25) 72%, 
+      rgba(16, 10, 7, 0.15) 100%
+    ),
+    linear-gradient(to top, 
+      rgba(16, 10, 7, 0.92) 0%, 
+      transparent 22%
+    ),
+    linear-gradient(to bottom, 
+      rgba(16, 10, 7, 0.85) 0%, 
+      transparent 18%
+    );
+  z-index: 1;
+}
+
+.hero-cinematic-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.hero-headline {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-warm-ivory);
+  font-size: clamp(2.8rem, 5.2vw, 4.4rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero-headline em {
+  font-style: italic;
+  font-family: var(--font-serif);
+  color: var(--color-champagne-gold);
+}
+
+.hero-description {
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  color: var(--color-muted-sand);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE: SECTION 2 — RESTAURANT INTRODUCTION
+   -------------------------------------------------------------------------- */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 5.5rem);
+}
+
+.intro-visual {
+  position: relative;
+}
+
+.intro-image {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-gold-border);
+  box-shadow: var(--shadow-card);
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+.intro-accent-badge {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  background: rgba(36, 19, 12, 0.95);
+  border: 1px solid var(--color-antique-gold);
+  padding: 1.25rem 1.75rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(8px);
+}
+
+.intro-accent-badge span {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--color-champagne-gold);
+  line-height: 1;
+}
+
+.intro-accent-badge small {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted-sand);
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE: SECTION 3 — SIGNATURE DISHES (STRICTLY 2 ITEMS)
+   -------------------------------------------------------------------------- */
+.signature-dishes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.signature-dish-card {
+  background: var(--bg-card-dark);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: all var(--transition-medium);
+  display: flex;
+  flex-direction: column;
+}
+
+.signature-dish-card:hover {
+  border-color: var(--color-gold-border-bright);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card), var(--shadow-gold-glow);
+}
+
+.signature-dish-img-box {
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+  position: relative;
+}
+
+.signature-dish-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.signature-dish-card:hover .signature-dish-img-box img {
+  transform: scale(1.05);
+}
+
+.signature-dish-info {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.dish-badge {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-champagne-gold);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.dish-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  color: var(--color-warm-ivory);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.dish-desc {
+  font-size: 0.98rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE: SECTION 4 — DINING EXPERIENCE
+   -------------------------------------------------------------------------- */
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 5.5rem);
+}
+
+.experience-content {
+  padding-right: 1rem;
+}
+
+.experience-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.experience-item {
+  border-left: 2px solid var(--color-antique-gold);
+  padding-left: 1rem;
+}
+
+.experience-item h4 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-warm-ivory);
+  margin-bottom: 0.35rem;
+}
+
+.experience-item p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE: SECTION 5 — SERVICES PREVIEW (2 FEATURED CARDS)
+   Balanced two-column luxury cards with centered alignment and generous spacing.
+   -------------------------------------------------------------------------- */
+.services-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 960px;
+  margin: 3rem auto 3.5rem;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.service-preview-card {
+  background: var(--bg-card-dark);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: all var(--transition-medium);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-preview-card:hover {
+  border-color: var(--color-champagne-gold);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+}
+
+.service-preview-img-box {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.service-preview-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.service-preview-card:hover .service-preview-img-box img {
+  transform: scale(1.08);
+}
+
+.service-preview-body {
+  padding: 1.85rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.service-preview-body h3 {
+  font-size: 1.45rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-preview-body p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE: SECTION 6 — RESTAURANT ATMOSPHERE (EDITORIAL MOSAIC)
+   -------------------------------------------------------------------------- */
+.atmosphere-mosaic {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 1fr;
+  gap: 1.75rem;
+  margin-top: 3rem;
+  align-items: stretch;
+}
+
+.atmosphere-card {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-gold-border);
+  height: 420px;
+}
+
+.atmosphere-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.atmosphere-card:hover img {
+  transform: scale(1.05);
+}
+
+.atmosphere-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(16, 10, 7, 0.8) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.75rem;
+}
+
+.atmosphere-overlay span {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-warm-ivory);
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE: SECTION 7 — GALLERY PREVIEW (STRICTLY 2 IMAGES)
+   -------------------------------------------------------------------------- */
+.gallery-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.gallery-preview-card {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-gold-border);
+  height: 380px;
+  position: relative;
+}
+
+.gallery-preview-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-preview-card:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-preview-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(16, 10, 7, 0.85) 100%);
+  color: var(--color-warm-ivory);
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE: SECTION 8 — TESTIMONIALS (WARM IVORY CONTRAST SECTION)
+   -------------------------------------------------------------------------- */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.testimonial-card {
+  background: #EFE7D8;
+  border: 1px solid rgba(196, 154, 69, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: all var(--transition-fast);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-quote-icon {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  color: var(--color-antique-gold);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #2D1B12;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(196, 154, 69, 0.25);
+  padding-top: 1rem;
+}
+
+.testimonial-author-name {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1A0E08;
+}
+
+.testimonial-author-tag {
+  font-size: 0.75rem;
+  color: #7D6B5D;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE: SECTION 9 — RESERVATION CALL TO ACTION
+   -------------------------------------------------------------------------- */
+.cta-banner-section {
+  position: relative;
+  background-color: var(--color-rich-brown);
+  border-top: 1px solid var(--color-gold-border);
+  border-bottom: 1px solid var(--color-gold-border);
+  text-align: center;
+}
+
+.cta-banner-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-banner-content h2 {
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  margin-bottom: 1rem;
+}
+
+.cta-banner-content p {
+  font-size: 1.15rem;
+  color: var(--color-muted-sand);
+  margin-bottom: 2.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   PAGE HERO (ABOUT, SERVICES, GALLERY, CONTACT)
+   -------------------------------------------------------------------------- */
+.page-hero {
+  position: relative;
+  padding-top: calc(var(--navbar-height) + 4rem);
+  padding-bottom: clamp(4rem, 7vw, 6.5rem);
+  background-color: var(--color-espresso);
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-gold-border);
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.25;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.1);
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(16, 10, 7, 0.4) 0%, rgba(16, 10, 7, 0.95) 90%);
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-hero-content h1 {
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  margin-bottom: 1.25rem;
+}
+
+.page-hero-content p {
+  font-size: 1.18rem;
+  color: var(--color-muted-sand);
+  line-height: 1.8;
+}
+
+/* --------------------------------------------------------------------------
+   ABOUT US: SECTION 2 — MEET THE OWNER
+   -------------------------------------------------------------------------- */
+.owner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  align-items: center;
+  gap: clamp(3rem, 6vw, 6rem);
+}
+
+.owner-portrait-box {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-gold-border);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+}
+
+.owner-portrait-box img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+}
+
+.owner-title-badge {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-gold-border);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.owner-sig {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--color-champagne-gold);
+  font-style: italic;
+}
+
+.owner-role {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted-sand);
+}
+
+.owner-story-text {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--color-text-body);
+}
+
+/* --------------------------------------------------------------------------
+   ABOUT US: SECTION 3 — PHILOSOPHY (3 CONTENT BLOCKS - TEXT-ONLY LUXURY LAYOUT)
+   -------------------------------------------------------------------------- */
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+  margin-top: 3.5rem;
+}
+
+.philosophy-card-textonly {
+  background: var(--bg-card-dark);
+  border: 1px solid var(--color-gold-border);
+  border-top: 2px solid var(--color-antique-gold);
+  border-radius: var(--radius-sm);
+  padding: 3rem 2.25rem;
+  text-align: left;
+  transition: all var(--transition-medium);
+  display: flex;
+  flex-direction: column;
+}
+
+.philosophy-card-textonly:hover {
+  border-color: var(--color-champagne-gold);
+  border-top-color: var(--color-champagne-gold);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card), var(--shadow-gold-glow);
+}
+
+.philosophy-card-textonly .philosophy-num {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  color: var(--color-antique-gold);
+  line-height: 1;
+  margin-bottom: 1.25rem;
+}
+
+.philosophy-card-textonly h3 {
+  font-size: 1.75rem;
+  color: var(--color-warm-ivory);
+  margin-bottom: 0.75rem;
+}
+
+.philosophy-rule {
+  width: 36px;
+  height: 1px;
+  background: var(--color-antique-gold);
+  margin-bottom: 1.25rem;
+  opacity: 0.6;
+}
+
+.philosophy-card-textonly p {
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* --------------------------------------------------------------------------
+   ABOUT US: SECTION 4 — CULINARY INSPIRATION
+   -------------------------------------------------------------------------- */
+.inspiration-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.inspiration-item {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-gold-border);
+  height: 380px;
+}
+
+.inspiration-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.inspiration-item:hover img {
+  transform: scale(1.06);
+}
+
+.inspiration-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.75rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(16, 10, 7, 0.9) 100%);
+}
+
+.inspiration-caption h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.inspiration-caption p {
+  font-size: 0.88rem;
+  color: var(--color-muted-sand);
+}
+
+/* --------------------------------------------------------------------------
+   OUR SERVICES PAGE: 8 DETAILED SERVICE SECTIONS
+   -------------------------------------------------------------------------- */
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 5rem);
+}
+
+.service-row.reverse {
+  direction: rtl;
+}
+
+.service-row.reverse > * {
+  direction: ltr;
+}
+
+.service-media {
+  position: relative;
+  height: 440px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-gold-border);
+  box-shadow: var(--shadow-card);
+}
+
+.service-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.service-row:hover .service-media img {
+  transform: scale(1.04);
+}
+
+.service-number {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--color-antique-gold);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  opacity: 0.7;
+}
+
+.service-content h3 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 1.25rem;
+}
+
+.service-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-muted-sand);
+  margin-bottom: 1.75rem;
+}
+
+.service-features-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.service-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  color: var(--color-warm-ivory);
+}
+
+.service-feature svg {
+  color: var(--color-champagne-gold);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   CONTACT US: CONTACT & RESERVATION FORMS
+   -------------------------------------------------------------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.contact-info-card {
+  background: var(--bg-card-dark);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: 2.75rem;
+}
+
+.contact-info-block {
+  margin-bottom: 2rem;
+}
+
+.contact-info-block:last-child {
+  margin-bottom: 0;
+}
+
+.contact-info-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-champagne-gold);
+  margin-bottom: 0.5rem;
+}
+
+.contact-info-value {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-warm-ivory);
+}
+
+.contact-info-value a {
+  color: var(--color-warm-ivory);
+  transition: color var(--transition-fast);
+}
+
+.contact-info-value a:hover {
+  color: var(--color-champagne-gold);
+}
+
+.contact-info-note {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+}
+
+.contact-form-box {
+  background: var(--bg-card-dark);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: 3rem clamp(1.5rem, 4vw, 3rem);
+}
+
+/* Location Map Placeholder */
+.location-showcase {
+  margin-top: 5rem;
+  background: var(--color-rich-brown);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: 3.5rem clamp(1.5rem, 4vw, 3.5rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.map-placeholder-box {
+  height: 320px;
+  background: #150D09;
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(196, 154, 69, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.map-pin-emblem {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid var(--color-antique-gold);
+  background: rgba(36, 19, 12, 0.9);
+  color: var(--color-champagne-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 20px rgba(196, 154, 69, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .services-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .atmosphere-mosaic {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .atmosphere-card:nth-child(3) {
+    grid-column: span 2;
+    height: 320px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  .footer-top > *:last-child {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-menu,
+  .nav-actions .btn-gold {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--navbar-height) + 2rem);
+    padding-bottom: 4rem;
+  }
+
+  .hero-cinematic-bg {
+    background-position: 70% center;
+  }
+
+  .hero-cinematic-bg::before {
+    background: 
+      linear-gradient(to right, 
+        rgba(16, 10, 7, 0.95) 0%, 
+        rgba(16, 10, 7, 0.88) 55%, 
+        rgba(16, 10, 7, 0.45) 100%
+      ),
+      linear-gradient(to top, 
+        rgba(16, 10, 7, 0.95) 0%, 
+        transparent 28%
+      ),
+      linear-gradient(to bottom, 
+        rgba(16, 10, 7, 0.88) 0%, 
+        transparent 20%
+      );
+  }
+
+  .hero-content {
+    max-width: 540px;
+    margin: 0;
+    text-align: left;
+  }
+
+  .hero-cta-group {
+    justify-content: flex-start;
+  }
+
+  .services-preview-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+
+  .intro-grid,
+  .experience-grid,
+  .owner-grid,
+  .service-row,
+  .contact-grid,
+  .location-showcase {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .service-row.reverse {
+    direction: ltr;
+  }
+
+  .signature-dishes-grid,
+  .gallery-preview-grid,
+  .testimonials-grid,
+  .philosophy-grid,
+  .inspiration-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .luxury-form {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-top > *:last-child {
+    grid-column: span 1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .section {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+
+  .hero-headline {
+    font-size: 2.4rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .atmosphere-mosaic {
+    grid-template-columns: 1fr;
+  }
+
+  .atmosphere-card:nth-child(3) {
+    grid-column: span 1;
+  }
+
+  .whatsapp-float-btn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .whatsapp-float-icon-box {
+    width: 50px;
+    height: 50px;
+  }
+
+  .whatsapp-tooltip {
+    display: none;
+  }
+}
+
+  </style>
 </head>
 <body class="bg-espresso">
 
@@ -78,7 +2781,7 @@
          PAGE HERO
          ======================================================================== -->
     <header class="page-hero">
-      <div class="page-hero-bg" style="background-image: url('assets/images/contact-hero.jpg');"></div>
+      <div class="page-hero-bg" style="background-image: url('https://dollyziba-web.github.io/porta/assets/images/contact-hero.jpg'), url('assets/images/contact-hero.jpg');"></div>
       <div class="page-hero-overlay"></div>
       <div class="container page-hero-content reveal">
         <span class="gold-eyebrow">Connect &amp; Reserve</span>

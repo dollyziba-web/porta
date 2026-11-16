@@ -3,7 +3,11 @@
  * Italian & International Fine Dining • Italy
  */
 
+document.documentElement.classList.add('js-enabled');
+
 document.addEventListener('DOMContentLoaded', () => {
+  if (window.__zeeMainInitialized) return;
+  window.__zeeMainInitialized = true;
   // --------------------------------------------------------------------------
   // 1. STICKY NAVBAR ON SCROLL
   // --------------------------------------------------------------------------

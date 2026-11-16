@@ -75,7 +75,7 @@
 /* --------------------------------------------------------------------------
    2. SCROLL REVEAL ANIMATIONS
    -------------------------------------------------------------------------- */
-.reveal {
+.js-enabled .reveal {
   opacity: 0;
   transform: translateY(35px);
   transition: opacity 0.85s cubic-bezier(0.2, 0.9, 0.3, 1),
@@ -83,19 +83,19 @@
   will-change: opacity, transform;
 }
 
-.reveal.reveal-left {
+.js-enabled .reveal.reveal-left {
   transform: translateX(-40px);
 }
 
-.reveal.reveal-right {
+.js-enabled .reveal.reveal-right {
   transform: translateX(40px);
 }
 
-.reveal.reveal-scale {
+.js-enabled .reveal.reveal-scale {
   transform: scale(0.94);
 }
 
-.reveal.is-revealed {
+.js-enabled .reveal.is-revealed {
   opacity: 1;
   transform: translate(0, 0) scale(1);
 }
